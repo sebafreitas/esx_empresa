@@ -8,4 +8,4 @@ el sistema cuenta con misiones para robo de recursos, compra de recursos, y de m
 los derechos completos son de pertenencia de RockStar
 
 
-video del sistema : https://www.youtube.com/watch?v=2z_Uepi1vSU
+video del sistema : 
