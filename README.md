@@ -18,4 +18,6 @@ The system has missions to steal resources, buy and sell resources and more acti
 All rights belong to RockStar.
 
 
-video del sistema : 
+
+
+video del sistema : https://www.youtube.com/watch?v=6gASAYD6Cfg
