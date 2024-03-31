@@ -1,43 +1,42 @@
 Config = {}
 
-Config.webhook = "SEU_WEBHOOK"				-- Webhook to send logs to discord
-Config.lang = "en"							-- Set the file language [en/br]
-Config.ESXSHAREDOBJECT = "esx:getSharedObject" -- Change your getshared object event here, in case you are using anti-cheat.
+Config.webhook = "SEU_WEBHOOK"					-- Webhook para enviar logs a discord
+Config.lang = "en"								-- Establecer el idioma del archivo [en/es/fr/br]
+Config.ESXSHAREDOBJECT = "esx:getSharedObject" 	-- Cambia tu evento getshared object aquí, en caso de que estés usando anti-cheat.
 
-Config.max_owners = 9999						-- Maximum number of people who can buy the same company
-Config.multiplicador_lossantos = 450 		-- Sales value of each product in Los Santos
-Config.multiplicador_blaine = 600 			-- Sales value of each product in Blaine Country
-Config.multiplicador_paleto = 800 			-- Sales value of each product in Paleto
-Config.tempo_suprimentos = 240 				-- Time (in seconds) for purchased supplies to arrive
-Config.tempo_processamento_suprimentos = 10	-- Time (in minutes) for 2 supplies to become a research or product point (15 min = 192 products generated per day)
-Config.probabilidade_ser_saqueado = 0.01	-- Likelihood of the company being plundered if they have not upgraded security
-Config.NPC = true							-- Enables / disables NPCs while stealing supplies
-Config.itemC4 = "c4"						-- Item needed to break into the vehicle
-
+Config.max_owners = 9999						-- Número máximo de personas que pueden comprar la misma empresa
+Config.multiplicador_lossantos = 450 			-- Valor de las ventas de cada producto en Los Santos
+Config.multiplicador_blaine = 600 				-- Valor de las ventas de cada producto en el país de Blaine
+Config.multiplicador_paleto = 800 				-- Valor de las ventas de cada producto en Paleto
+Config.tempo_suprimentos = 240 					-- Tiempo (en segundos) para que lleguen los suministros comprados
+Config.tempo_processamento_suprimentos = 10		--  Tiempo (en minutos) para que 2 suministros se conviertan en un punto de investigación o producto (15 min = 192 productos generados al día)
+Config.probabilidade_ser_saqueado = 0.01		-- Probabilidad de que la empresa sea saqueada si no ha mejorado la seguridad
+Config.NPC = true								-- Activa / desactiva NPCs mientras robas suministros
+Config.itemC4 = "c4"							-- Elemento necesario para forzar el vehículo
 
 Config.empresas = {
-	-- ["galaxy"] = {
-		-- ['nome'] = "Boate Galaxy", 											-- Company's name
-		-- ['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776882252142739456/Sem_titulo.png?width=555&height=555", -- Company image (must be in square format. Ideal size: 555x555)
-		-- ['coordenada'] = {-1618.2924804688,-3011.9091796875,-75.205078125}, 	-- Location to open the menu
-		-- ['coordenada_garagem'] = {-23.88,213.38,106.57,241.8}, 				-- Place where stolen vehicles must be delivered
+	["galaxy"] = {
+		 ['nome'] = "Boate Galaxy", 											-- Nombre de la empresa
+		 ['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776882252142739456/Sem_titulo.png?width=555&height=555&ex=661982fa&is=66070dfa&hm=9a45b3c021f67fe001e758628ccdfc8e10d4c5ef236603daf6bb8229e234a7b8&", -- Imagen de la empresa (debe estar en formato cuadrado. Tamaño ideal: 555x555)
+		 ['coordenada'] = {-1618.2924804688,-3011.9091796875,-75.205078125}, 	-- Ubicación para abrir el menú
+		 ['coordenada_garagem'] = {-23.88,213.38,106.57,241.8}, 				-- Lugar donde deben entregarse los vehículos robados
 
-		-- ['max_estoque_produtos'] = 400, 			-- Product storage capacity
-		-- ['max_estoque_pesquisa'] = 400, 			-- Research storage capacity
-		-- ['max_estoque_suprimentos'] = 250, 		-- Supply storage capacity
-		-- ['valor_compra'] = 500000, 				-- Company purchase value
-		-- ['valor_evoluir_equipamentos'] = 60000, 	-- Value to upgrade equipment
-		-- ['valor_evoluir_funcionarios'] = 90000, 	-- Value to upgrade employees
-		-- ['valor_evoluir_seguranca'] = 40000, 	-- Value to upgrade security
-		-- ['valor_comprar_suprimentos'] = 40000, 	-- Value to buy supplies
-		-- ['quantidade_compra_suprimentos'] = 100,	-- Amount of supplies you receive when purchasing
-		-- ['quantidade_roubo_suprimentos'] = 40, 	-- Amount of supplies you receive when stealing
-		-- ['estoque_evoluir_equipamentos'] = 150	-- Amount of supply inventory you gain when upgrading equipment
-	-- },
+		['max_estoque_produtos'] = 400, 			-- Capacidad de almacenamiento de productos
+		['max_estoque_pesquisa'] = 400, 			-- Capacidad de almacenamiento
+		['max_estoque_suprimentos'] = 250, 		-- Capacidad de almacenamiento de suministros
+		['valor_compra'] = 500000, 				-- Valor de compra de la empresa
+		['valor_evoluir_equipamentos'] = 60000, 	-- Valor para actualizar los equipos
+		['valor_evoluir_funcionarios'] = 90000, 	-- Valor para actualizar a los empleados
+		['valor_evoluir_seguranca'] = 40000, 	-- Valor para mejorar la seguridad
+		['valor_comprar_suprimentos'] = 40000, 	-- Valor para comprar suministros
+		['quantidade_compra_suprimentos'] = 100,	-- Cantidad de suministros que recibe al comprar
+		['quantidade_roubo_suprimentos'] = 40, 	-- Cantidad de suministros que recibe al robar
+		['estoque_evoluir_equipamentos'] = 150	-- Cantidad de inventario de suministros que obtienes al mejorar el equipo
+	},
 
 	["split_sides"] = {
 		['nome'] = "Split Sides West",
-		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776883717398462464/Sem_titulo.png",
+		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776883717398462464/Sem_titulo.png?ex=66198458&is=66070f58&hm=9ed3afb60126fbce2cbb9a509b08c5b5e401acdd4507a14e9f8d772e1d2e07bf&",
 		['coordenada'] = {-449.96432495117,284.10794067383,78.521469116211},
 		['coordenada_garagem'] = {-420.11,292.97,83.24,263.09},
 
@@ -56,7 +55,7 @@ Config.empresas = {
 
 	["motoclube_1"] = {
 		['nome'] = "Moto Clube Principal",
-		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776886363810693150/Sem_titulo.png?width=555&height=555",
+		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776886363810693150/Sem_titulo.png?width=555&height=555&ex=661986ce&is=660711ce&hm=e87eadd8aa2e16e24093775be4a030a6b273c74f210f9ea918b891f71ecd6f79&",
 		['coordenada'] = {977.77209472656,-94.102691650391,74.868125915527},
 		['coordenada_garagem'] = {981.84,-112.3,74.18,119.19},
 
@@ -75,7 +74,7 @@ Config.empresas = {
 
 	["motoclube_2"] = {
 		['nome'] = "Moto Clube Secundário",
-		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776886646330490921/Sem_titulo.png?width=555&height=555",
+		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776886646330490921/Sem_titulo.png?width=555&height=555&ex=66198712&is=66071212&hm=7e5b7eaaa559f3ccc2533629e13b668cb33b849f9fcbf19bf0cee570b8b0198e&",
 		['coordenada'] = {1112.4240722656,-3145.216796875,-37.062732696533},
 		['coordenada_garagem'] = {974.32,-131.42,74.14,63.87},
 
@@ -94,7 +93,7 @@ Config.empresas = {
 	
 	["arcadius"] = {
 		['nome'] = "Arcadius Center",
-		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776918037865300008/Sem_titulo.png",
+		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776918037865300008/Sem_titulo.png?ex=6619a44e&is=66072f4e&hm=386afb498712f4d7c776977e71bf2cebe54cd4960dc07a27dd528c51b8eb9684&",
 		['coordenada'] = {-125.81478118896,-641.68774414062,168.84034729004},
 		['coordenada_garagem'] = {-104.74,-608.98,36.08,157.59},
 
@@ -113,7 +112,7 @@ Config.empresas = {
 
 	["maze_bank_1"] = {
 		['nome'] = "Maze Bank",
-		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776922023351418934/latest.png?width=555&height=555",
+		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776922023351418934/latest.png?width=555&height=555&ex=6619a804&is=66073304&hm=443f38bc70849b038bd1356f7a9f480ff45142db36a7054662f4bd9c76d9f83d&",
 		['coordenada'] = {-81.126991271973,-801.71881103516,243.40077209473},
 		['coordenada_garagem'] = {-84.16,-766.42,41.23,18.66},
 
@@ -132,7 +131,7 @@ Config.empresas = {
 
 	["maze_bank_2"] = {
 		['nome'] = "Maze Bank Filial",
-		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776927356743974922/Sem_titulo.png",
+		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776927356743974922/Sem_titulo.png?ex=6619acfc&is=660737fc&hm=9c3f6b72f4dcf93497a157bb119d0e6f20667c7e61affae8089d821a30b8e7f2&",
 		['coordenada'] = {-1372.4666748047,-464.24627685547,72.043998718262},
 		['coordenada_garagem'] = {-1379.36,-474.87,31.6,98.61},
 
@@ -151,7 +150,7 @@ Config.empresas = {
 
 	["lom_bank"] = {
 		['nome'] = "Lom Bank",
-		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776926125640646656/latest.png?width=555&height=555",
+		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776926125640646656/latest.png?width=555&height=555&ex=6619abd6&is=660736d6&hm=67dffc55e5d230cc063e16e399cc7cedb15e988c3d3ad030d570a1b3a52ef22d&",
 		['coordenada'] = {-1555.88671875,-575.01599121094,108.53781890869},
 		['coordenada_garagem'] = {-1548.22,-547.15,34.38,35.88},
 
@@ -170,7 +169,7 @@ Config.empresas = {
 	
 	["escritorio_1"] = {
 		['nome'] = "Escritório básico",
-		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776920405348581405/Screenshot_8.png?width=555&height=555",
+		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776920405348581405/Screenshot_8.png?width=555&height=555&ex=6619a683&is=66073183&hm=d7e909d4b1695c9e1d0e50275aa8a3380296008017c6fe49deab879aae1e2725&",
 		['coordenada'] = {1161.5322265625,-3198.5952148438,-39.00798034668},
 		['coordenada_garagem'] = {308.84,-762.24,29.26,156.14},
 
@@ -189,7 +188,7 @@ Config.empresas = {
 	
 	["escritorio_2"] = {
 		['nome'] = "Escritório médio",
-		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776921775858122812/Screenshot_9.png?width=555&height=555",
+		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776921775858122812/Screenshot_9.png?width=555&height=555&ex=6619a7c9&is=660732c9&hm=9c949a3c574c4b6c9bc28c7b79d600c5286a8fc311b74c1650cc03ca3717b6e6&",
 		['coordenada'] = {-1007.4771728516,-477.30615234375,50.02819442749},
 		['coordenada_garagem'] = {-1029.72,-495.48,36.78,110.78},
 
@@ -208,7 +207,7 @@ Config.empresas = {
 
 	["escritorio_3"] = {
 		['nome'] = "Escritório de luxo",
-		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776922762701832232/Screenshot_10.png?width=555&height=555",
+		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776922762701832232/Screenshot_10.png?width=555&height=555&ex=6619a8b5&is=660733b5&hm=8f0e5b097bc367b1a9be2f9a2fc6837059b791e9bb9064516b8f8f8865798cf4&",
 		['coordenada'] = {-1911.4484863281,-572.99914550781,19.097234725952},
 		['coordenada_garagem'] = {-1896.43,-557.48,11.73,224.83},
 
@@ -227,7 +226,7 @@ Config.empresas = {
 	
 	["clubhouse_2"] = {
 		['nome'] = "Hawick Clubhouse",
-		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776929977488769054/Sem_titulo.png?width=555&height=555",
+		['logo'] = "https://media.discordapp.net/attachments/533398980428693550/776929977488769054/Sem_titulo.png?width=555&height=555&ex=6619af6d&is=66073a6d&hm=7d099458ba2459e533bf0abdc414f881b50273f63a534d2701f90fb1e1b04272&",
 		['coordenada'] = {1008.3001708984,-3169.8244628906,-38.894165039062},
 		['coordenada_garagem'] = {-27.41,-196.33,52.37,66.42},
 
@@ -300,7 +299,11 @@ Config.veiculos_roubo = {
 	"YOUGA2"
 }
 
--- Locais de venda para menos que 200 produtos
+
+
+-- Puntos de venta de menos de 200 productos
+--------------------------------------------
+
 Config.qtd_venda_pouco = 200
 Config.locais_venda_pouco = {
 	{-3055.994140625,608.00018310547,7.214213848114, car = "MULE"},
@@ -317,7 +320,10 @@ Config.locais_venda_pouco = {
 	{-880.37023925781,-1486.4353027344,5.0242247581482, car = "MULE"},
 }
 
--- Locais de venda para menos que 400 produtos
+
+
+-- Puntos de venta de menos de 400 productos
+--------------------------------------------
 Config.qtd_venda_medio = 400
 Config.locais_venda_medio = {
 	{3480.0036621094,3668.0,33.883232116699, car = "POUNDER2"},
@@ -335,7 +341,10 @@ Config.locais_venda_medio = {
 	{1731.9577636719,3311.5471191406,41.219108581543, car = "POUNDER2"},
 }
 
--- Locais de venda para mais que 400 produtos
+
+
+-- Puntos de venta de más de 400 productos
+------------------------------------------
 Config.locais_venda_muito = {
 	{2007.0180664062,4987.0083007812,41.381526947021, car = "TERBYTE"},
 	{-600.99267578125,5301.0,70.209480285645, car = "TERBYTE"},

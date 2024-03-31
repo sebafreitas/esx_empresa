@@ -1,6 +1,6 @@
-RegisterNetEvent("Notify")
-AddEventHandler("Notify", function(type,msg)
-    -- Você pode mudar a notificação como desejar
+RegisterNetEvent("esx_notify")
+AddEventHandler("esx_notify", function(type,msg)
+    -- Puede cambiar la notificación como desee
 	if type == "negado" then
 		prefix = "~r~"
     elseif type == "importante" then

@@ -1,15 +1,21 @@
 ESX = exports["es_extended"]:getSharedObject()
 
-local vrp_ready = true
-function SendWebhookMessage(webhook,message)
-    if webhook ~= nil and webhook ~= "" then
-        PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
-    end
+-- Eliminamos la verificación de IP
+-- local allowed_ips = {
+--     ["192.168.1.100"] = true,
+--     ["192.168.1.101"] = true,
+--     -- Agrega más IPs permitidas según sea necesario
+-- }
+
+local vrp_ready = true  -- Establecemos vrp_ready como verdadero
+
+-- Eliminamos la función CheckIP()
+
+function SendWebhookMessage(webhook, message)
+    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
 end
 
-local allowed_ips = {
-    ["190.133.61.75"] = true  -- Agrega tu IP aquí
-}
+-- Eliminamos el evento playerConnecting relacionado con la verificación de IP
 
 Citizen.CreateThread(function()
     Wait(5000)
@@ -34,23 +40,26 @@ Citizen.CreateThread(function()
     ]])
 end)
 
-Citizen.CreateThread(function()
-    PerformHttpRequest("https://api.ipify.org?format=json", function(err, data, headers)
-        if data then
-            local ip = json.decode(data).ip
-            if allowed_ips[ip] then
-                vrp_ready = true
-                print("^2["..GetCurrentResourceName().."] Script autenticado, cualquier duda, contáctame en Discord perttex")
-            else
-                vrp_ready = false
-                print("^8["..GetCurrentResourceName().."] Tu IP no está autenticada, contáctame en Discord perttex")
-                SendWebhookMessage("https://discordapp.com/api/webhooks/790669512537931778/EiSZ5YKw7V-7m8lOyrzwZ24Wo1wzlFoeLdDrzR_rBgfkAgK6woDkaU3O8pnu1UqM-J_L","["..GetCurrentResourceName().."] "..ip)
-            end
-        else
-            print("^8["..GetCurrentResourceName().."] Problemas con el servidor. ¡Intenta nuevamente! Cualquier duda, contáctame en Discord perttex")
-        end
-    end, "GET", "", {})
-end)
+-- También eliminamos el segundo hilo de verificación de IP
+
+-- Citizen.CreateThread(function()
+--     PerformHttpRequest("https://api.ipify.org?format=json", function(err, data, headers)
+--         if data then
+--             local ip = json.decode(data).ip
+--             if allowed_ips[ip] then
+--                 vrp_ready = true
+--                 print("^2["..GetCurrentResourceName().."] Script autenticado, cualquier duda, contáctame en Discord perttex")
+--             else
+--                 vrp_ready = false
+--                 print("^8["..GetCurrentResourceName().."] Tu IP no está autenticada, contáctame en Discord perttex")
+--                 SendWebhookMessage("https://discordapp.com/api/webhooks/790669512537931778/EiSZ5YKw7V-7m8lOyrzwZ24Wo1wzlFoeLdDrzR_rBgfkAgK6woDkaU3O8pnu1UqM-J_L","["..GetCurrentResourceName().."] "..ip)
+--             end
+--         else
+--             print("^8["..GetCurrentResourceName().."] Problemas con el servidor. ¡Intenta nuevamente! Cualquier duda, contáctame en Discord perttex")
+--         end
+--     end, "GET", "", {})
+-- end)
+
 
 local version = 5
 Citizen.CreateThread(function()

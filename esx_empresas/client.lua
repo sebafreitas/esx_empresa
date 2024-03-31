@@ -1,6 +1,5 @@
------------------------------------------------------------------------------------------------------------------------------------------
--- LOCAIS
------------------------------------------------------------------------------------------------------------------------------------------
+-- LOCAL
+--------
 local menuactive = false
 local empresaAtual = nil
 Citizen.CreateThread(function()
@@ -44,16 +43,17 @@ Citizen.CreateThread(function()
     TriggerServerEvent("vrp_empresas:saquear") 
 end)
 
------------------------------------------------------------------------------------------------------------------------------------------
+
+
 -- CALLBACKS
------------------------------------------------------------------------------------------------------------------------------------------
+------------
 
 RegisterNUICallback("suprimentos",function(data,cb)
     if data == 1 then
-        -- Roubar suprimentos
+        -- Robo de suministros
         TriggerEvent("vrp_empresas:roubarSuprimentos",empresaAtual)
     elseif data == 2 then
-        -- Comprar suprimentos
+        -- Comprar suministros
         TriggerServerEvent("vrp_empresas:comprarSuprimentos",empresaAtual, data)
     end
 end)
@@ -86,9 +86,10 @@ function closeUI()
     SendNUIMessage({ hidemenu = true })
 end
 
------------------------------------------------------------------------------------------------------------------------------------------
--- ROUBAR SUPRIMENTOS
------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-- ROBAR SUMINISTROS
+--------------------
 
 local nveh = nil
 local blip = nil
@@ -390,9 +391,11 @@ function despawnNPC()
     SetEntityAsNoLongerNeeded(Passenger)
     SetEntityAsNoLongerNeeded(Enemyveh)
 end
------------------------------------------------------------------------------------------------------------------------------------------
--- VENDER ESTOQUE
------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+-- VENDER STOCK
+---------------
 
 local nveh2 = nil
 local blip2 = nil
@@ -400,13 +403,13 @@ RegisterNetEvent('vrp_empresas:venderProdutos')
 AddEventHandler('vrp_empresas:venderProdutos', function(key,tipo,qtd)
     local local_de_venda = {}
     if tipo == 1 then
-        -- Vender pouco
+        -- Vender poco
         local_de_venda = Config.locais_venda_pouco
     elseif tipo == 2 then
         -- Vender medio
         local_de_venda = Config.locais_venda_medio
     elseif tipo == 3 then
-        -- Vender muito
+        -- Vender mucho
         local_de_venda = Config.locais_venda_muito
     end
 
@@ -489,9 +492,10 @@ function entregaCarga(x,y,z,key,tipo,qtd)
     end
 end
 
------------------------------------------------------------------------------------------------------------------------------------------
--- FUNÇÕES
------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-- FUNCIONES
+------------
 
 RegisterNetEvent("lixeiroHeist:ptfx_c")
 AddEventHandler("lixeiroHeist:ptfx_c", function(x,y,z)
@@ -601,7 +605,7 @@ function spawnVehicle2(name,x,y,z,h)
 end
 
 
-function SpawnEnemyNPC(x, y, z, target) -- Works decent but not exactly how I want, still working no improving it
+function SpawnEnemyNPC(x, y, z, target) -- Funciona decentemente pero no exactamente como yo quiero, todavía trabajando no mejorarlo
     local done, location, heading = GetClosestVehicleNodeWithHeading(x + math.random(-100, 100), y + math.random(-100, 100), z, 1, 3, 0)
 
     RequestModel(0x964D12DC)
@@ -620,7 +624,7 @@ function SpawnEnemyNPC(x, y, z, target) -- Works decent but not exactly how I wa
         SetBlipSprite(Enemyblip, 270)
         SetBlipColour(Enemyblip, 1)
 
-        SetPedRelationshipGroupHash(Driver, Group)             SetPedRelationshipGroupHash(Passenger, Group) -- Passenger now works, but he is kinda stupid :D
+        SetPedRelationshipGroupHash(Driver, Group)             SetPedRelationshipGroupHash(Passenger, Group) -- Pasajero ahora funciona, pero es un poco estúpido :D
         SetEntityCanBeDamagedByRelationshipGroup(Driver, false, Group)  SetEntityCanBeDamagedByRelationshipGroup(Passenger, false, Group)
         GiveWeaponToPed(Driver, "WEAPON_MICROSMG", 400, false, true)    GiveWeaponToPed(Passenger, "WEAPON_MICROSMG", 400, false, true)
         SetPedCombatAttributes(Driver, 1, true)                SetPedCombatAttributes(Passenger, 1, true)
@@ -677,7 +681,7 @@ function playAnim(upper, seq, looping)
             -- request anim dict
             RequestAnimDict(dict)
             local i = 0
-            while not HasAnimDictLoaded(dict) and i < 1000 do -- max time, 10 seconds
+            while not HasAnimDictLoaded(dict) and i < 1000 do -- tiempo m
               Citizen.Wait(10)
               RequestAnimDict(dict)
               i = i+1
@@ -702,7 +706,7 @@ function playAnim(upper, seq, looping)
     end)
 end
 function stopAnim(upper)
-    anims = {} -- stop all sequences
+    anims = {} -- detener todas las secuencias
     if upper then
         ClearPedSecondaryTask(GetPlayerPed(-1))
     else
