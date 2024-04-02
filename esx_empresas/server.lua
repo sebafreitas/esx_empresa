@@ -61,20 +61,20 @@ end)
 -- end)
 
 
-local version = 5
-Citizen.CreateThread(function()
-    PerformHttpRequest("https://raw.githubusercontent.com/ALENTL/fivem_ip_version_lock/master/ips/ip_empresas.txt", function(err, database_ips, headers)
-        if database_ips then
-            print("Datos recibidos:", database_ips)
-            local arr_ips = json.decode(database_ips)
-            for k,v in pairs(arr_ips) do
-                -- Tu código aquí
-            end
-        else
-            print("Error al recuperar los datos:", err)
-        end
-    end, "GET", "", {})
-end)
+--local version = 5
+--Citizen.CreateThread(function()
+--    PerformHttpRequest("https://github.com/sebafreitas/fivem_ip_version_lock/ips/ip_empresas.txt", function(err, database_ips, headers)
+--       if database_ips then
+--            print("Datos recibidos:", database_ips)
+--            local arr_ips = json.decode(database_ips)
+--            for k,v in pairs(arr_ips) do
+--                -- Tu código aquí
+--            end
+--        else
+--            print("Error al recuperar los datos:", err)
+--        end
+--    end, "GET", "", {})
+--end)
 
 
 Citizen.CreateThread(function()
